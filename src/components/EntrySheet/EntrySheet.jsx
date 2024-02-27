@@ -1,7 +1,8 @@
 import React from 'react';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import '../styles/EntrySheet.css';
+import './EntrySheet.css';
+import { renameLabel, range } from '../../utils/utils.js';
 
 export const EntrySheet = ({id, layout, data}) => {
     const entry_id = data[layout["id_field"]];
