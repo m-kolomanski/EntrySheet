@@ -49,6 +49,39 @@
     font-weight: bold;
 }
 
+.entry-sheet section {
+    padding: 0 1em .5em 1em;
+}
+
+.entry-sheet .section-header {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.entry-sheet .section-row {
+    margin: 1em;
+    max-height: 3em;
+}
+
+.entry-sheet .section-row:has(.sheet-input-container):has(.sheet-box-input) {
+    max-height: fit-content;
+}
+
+.entry-sheet .section-row > div {
+    display: inline-block;
+}
+
+.entry-sheet .section-row input {
+    width: 95%;
+    margin: .3em 0 0 0;
+}
+
+.entry-sheet label {
+    margin: 0;
+    color: var(--grey);
+    font-size: 16px;
+}
+
 .entry-sheet input,
 .entry-sheet textarea {
     border: none;

@@ -15,13 +15,15 @@ export const Primary = {
             "name_field": "Entry_name",
             "owner_field": "Owner",
             "sections": {
-                "Main": []
+                "Main": ["First_field", "Second_field"]
             }
         },
         data: {
             "ID": 1,
             "Entry_name": "Test entry",
-            "Owner": "Jan Kowalski"
+            "Owner": "Jan Kowalski",
+            "First_field": "value1",
+            "Second_field": "value2"
         }
     }
 };
