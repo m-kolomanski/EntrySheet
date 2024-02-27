@@ -34,16 +34,16 @@ export const EntrySheet = ({id, layout, data}) => {
 const SheetHeader = ({entry_id, entry_name, owner}) => {
     return (
         <header class="sheet-header">
-            <input
-                type="text"
-                value={entry_name}
-            ></input>
-            <p>Owned by</p>
+            <textarea
+                class='entry-name'
+            >{entry_name}</textarea>
+            <p style={{gridColumn: 1}}>Owned by</p>
             <input
                 type="text"
                 value={owner}
+                style={{gridColumn: 2}}
             ></input>
-            { entry_id ? <span>Entry ID: {entry_id}</span> : "" }
+            { entry_id ? <span style={{gridColumn: 3, verticalAlign: 'bottom'}}>Entry ID: {entry_id}</span> : "" }
         </header>
     )
 };

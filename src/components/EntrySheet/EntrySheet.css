@@ -1,24 +1,68 @@
 .entry-sheet {
+    --orange: #df6919;
+    --red: #d9534f;
+    --grey: #4e5d6c;
+    --blue: #5bc0de;
+    --green: #5cb85c;
+    --light-grey: #abb6c2;
+    --yellow: #ffc107;
+    --dark-grey: #20374c;
+}
+
+.entry-sheet {
     color: black;
     background-color: white;
     box-shadow:
-        .3em .3em .3em darkgray,
-        -.3em .3em .3em darkgray,
-        .3em -.3em .3em darkgray,
-        -.3em -.3em .3em darkgray;
+        .3em .3em .3em var(--dark-grey),
+        -.3em .3em .3em var(--dark-grey),
+        .3em -.3em .3em var(--dark-grey),
+        -.3em -.3em .3em var(--dark-grey);
     border-radius: 1em;
     width: 100%;
 }
 
 .entry-sheet .sheet-header {
-    background-color: grey;
+    background-color: var(--light-grey);
     padding: 1em;
     border-radius: 1em;
-    box-shadow: -0em .5em .5em darkgray;
+    box-shadow: -0em .5em .5em var(--dark-grey);
     margin-bottom: 1em;
     width: auto;
+
+    display: grid;
+    grid-template-columns: 6em 25% 35% 25%;
+    grid-template-rows: 2em 2em;
+    align-items: baseline;
 }
 
-.entry-sheet .sheet-header input {
+.entry-sheet textarea.entry-name {
+    font-size: 2em;
+    width: 100%;
+    height: 2rem;
+
+    grid-column: 1 / span 3;
+    grid-row: 1;
+}
+
+.entry-sheet .sheet-header input,
+.entry-sheet .sheet-header textarea {
     font-weight: bold;
+}
+
+.entry-sheet input,
+.entry-sheet textarea {
+    border: none;
+    border-bottom: 1px solid var(--grey);
+    cursor: pointer;
+    width: auto;
+    display: block;
+    margin: 0em 1em 0em 0em;
+    background-color: transparent;
+    font-size: 18px;
+    resize: none;
+}
+
+.entry-sheet input:hover,
+.entry-sheet textarea:hover {
+    border-bottom: 1px solid var(--orange);
 }
