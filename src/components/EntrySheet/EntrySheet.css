@@ -72,8 +72,12 @@
 }
 
 .entry-sheet .section-row input {
-    width: 95%;
+    width: 100%;
     margin: .3em 0 0 0;
+}
+
+.entry-sheet .sheet-input-container {
+    width: 100%;
 }
 
 .entry-sheet label {
