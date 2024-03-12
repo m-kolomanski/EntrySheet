@@ -15,29 +15,27 @@ export const EntrySheet = ({id, layout, data, editable, field_types}) => {
 
     return (
         <div className="entry-sheet" id={id}>
-             
-                <SheetHeader
-                    entry_id={entry_id}
-                    entry_name={entry_name}
-                    owner={entry_owner}
-                ></SheetHeader>
-
                 <DataContext.Provider value={data}>
                 <isEditable.Provider value={editable}>
                 <fieldTypes.Provider value={field_types}>
-                        {
-                            Object.keys(layout['sections']).map((section) => {
-                                return(
-                                    
-                                    <SheetSection
-                                        header={section}
-                                        fields={layout['sections'][section]}
-                                    ></SheetSection>
-                                    
-                                )
-                            })
+                    <SheetHeader
+                        entry_id={entry_id}
+                        entry_name={entry_name}
+                        owner={entry_owner}
+                    ></SheetHeader>
+                    {
+                        Object.keys(layout['sections']).map((section) => {
+                            return(
+                                
+                                <SheetSection
+                                    header={section}
+                                    fields={layout['sections'][section]}
+                                ></SheetSection>
+                                
+                            )
+                        })
 
-                        }
+                    }
                 </fieldTypes.Provider>
                 </isEditable.Provider>
                 </DataContext.Provider>
@@ -64,16 +62,20 @@ EntrySheet.defaultProps = {
 const SheetHeader = ({entry_id, entry_name, owner}) => {
     return (
         <header className="sheet-header">
-            <textarea
+            <TextWidget
                 className='entry-name'
+                name='entry_name'
                 value={entry_name}
-            ></textarea>
+                label=""
+                multiline={true}
+            ></TextWidget>
             <p style={{gridColumn: 1}}>Owned by</p>
-            <input
-                type="text"
+            <TextWidget
+                name='entry_owner'
                 value={owner}
+                label=""
                 style={{gridColumn: 2}}
-            ></input>
+            ></TextWidget>
             { entry_id ? <span style={{gridColumn: 3}}>Entry ID: {entry_id}</span> : "" }
         </header>
     )
